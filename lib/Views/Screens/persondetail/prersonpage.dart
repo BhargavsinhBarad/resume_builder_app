@@ -3,14 +3,9 @@ import 'package:get/get.dart';
 
 import '../../Utils/global.dart';
 
-class persondetail extends StatefulWidget {
+class persondetail extends StatelessWidget {
   const persondetail({super.key});
 
-  @override
-  State<persondetail> createState() => _persondetailState();
-}
-
-class _persondetailState extends State<persondetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +28,25 @@ class _persondetailState extends State<persondetail> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
+                "Introduction",
+                style: Global.style3,
+              ),
+              SizedBox(
+                height: 3,
+              ),
+              TextFormField(
+                onChanged: (val) {
+                  Global.about = val;
+                },
+                maxLines: 5,
+                decoration: InputDecoration(
+                    hintText: "About your information..",
+                    border: OutlineInputBorder()),
+              ),
+              SizedBox(
+                height: 6,
+              ),
+              Text(
                 "DOB",
                 style: Global.style3,
               ),
@@ -41,7 +55,7 @@ class _persondetailState extends State<persondetail> {
               ),
               TextFormField(
                 keyboardType: TextInputType.datetime,
-                onSaved: (val) {
+                onChanged: (val) {
                   Global.datetime = val;
                 },
                 decoration: InputDecoration(
@@ -60,9 +74,7 @@ class _persondetailState extends State<persondetail> {
                   value: "single",
                   groupValue: Global.maritalstatus,
                   onChanged: (val) {
-                    setState(() {
-                      Global.maritalstatus = val;
-                    });
+                    Global.maritalstatus = val;
                   }),
               RadioListTile(
                 activeColor: Colors.blue,
@@ -70,9 +82,7 @@ class _persondetailState extends State<persondetail> {
                 value: "marride",
                 groupValue: Global.maritalstatus,
                 onChanged: (val) {
-                  setState(() {
-                    Global.maritalstatus = val;
-                  });
+                  Global.maritalstatus = val;
                 },
               ),
               Text(
@@ -84,9 +94,7 @@ class _persondetailState extends State<persondetail> {
                   Checkbox(
                       value: Global.english,
                       onChanged: (val) {
-                        setState(() {
-                          Global.english = val;
-                        });
+                        Global.english = val;
                       }),
                   Text("English"),
                 ],
@@ -96,9 +104,7 @@ class _persondetailState extends State<persondetail> {
                   Checkbox(
                       value: Global.hindi,
                       onChanged: (val) {
-                        setState(() {
-                          Global.hindi = val;
-                        });
+                        Global.hindi = val;
                       }),
                   Text("Hindi"),
                 ],
@@ -108,9 +114,7 @@ class _persondetailState extends State<persondetail> {
                   Checkbox(
                       value: Global.gujarati,
                       onChanged: (val) {
-                        setState(() {
-                          Global.gujarati = val;
-                        });
+                        Global.gujarati = val;
                       }),
                   Text("Gujarati"),
                 ],
@@ -120,7 +124,7 @@ class _persondetailState extends State<persondetail> {
                 style: Global.style3,
               ),
               TextFormField(
-                onSaved: (val) {
+                onChanged: (val) {
                   Global.nation = val;
                 },
                 decoration: const InputDecoration(

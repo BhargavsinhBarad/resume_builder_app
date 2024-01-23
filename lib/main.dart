@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:resume_builder_app/Views/Screens/Eduction/Eduction.dart';
@@ -6,6 +5,7 @@ import 'package:resume_builder_app/Views/Screens/Homepage/homescreen.dart';
 import 'package:resume_builder_app/Views/Screens/contect_info/contectinfopage.dart';
 import 'package:resume_builder_app/Views/Screens/detailspage/detailspage.dart';
 import 'package:resume_builder_app/Views/Screens/experiences/experiences.dart';
+import 'package:resume_builder_app/Views/Screens/pdfpage/pdf.dart';
 import 'package:resume_builder_app/Views/Screens/persondetail/prersonpage.dart';
 import 'package:resume_builder_app/Views/Screens/projectpage/project.dart';
 
@@ -25,6 +25,7 @@ void main() {
         'eduction': (context) => eductionpage(),
         'projects': (context) => projectpage(),
         'experiences': (context) => experiencespage(),
+        'pdf': (context) => pdf_page(),
       },
     ),
   );

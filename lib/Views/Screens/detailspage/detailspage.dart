@@ -1,19 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:resume_builder_app/Views/Screens/contect_info/contectinfopage.dart';
 
 import '../../Utils/global.dart';
 import '../../Utils/list.dart';
 
-class detailspage extends StatefulWidget {
+class detailspage extends StatelessWidget {
   const detailspage({super.key});
 
-  @override
-  State<detailspage> createState() => _detailspageState();
-}
-
-class _detailspageState extends State<detailspage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

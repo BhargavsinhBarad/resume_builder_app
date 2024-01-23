@@ -3,14 +3,9 @@ import 'package:get/get.dart';
 
 import '../../Utils/global.dart';
 
-class eductionpage extends StatefulWidget {
+class eductionpage extends StatelessWidget {
   const eductionpage({super.key});
 
-  @override
-  State<eductionpage> createState() => _eductionpageState();
-}
-
-class _eductionpageState extends State<eductionpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +35,7 @@ class _eductionpageState extends State<eductionpage> {
                 height: 3,
               ),
               TextFormField(
-                onSaved: (val) {
+                onChanged: (val) {
                   Global.course = val;
                 },
                 decoration: InputDecoration(
@@ -58,7 +53,7 @@ class _eductionpageState extends State<eductionpage> {
                 height: 3,
               ),
               TextFormField(
-                onSaved: (val) {
+                onChanged: (val) {
                   Global.school = val;
                 },
                 decoration: InputDecoration(
@@ -76,7 +71,7 @@ class _eductionpageState extends State<eductionpage> {
                 height: 3,
               ),
               TextFormField(
-                onSaved: (val) {
+                onChanged: (val) {
                   Global.cgpa = val;
                 },
                 decoration: InputDecoration(
@@ -94,7 +89,7 @@ class _eductionpageState extends State<eductionpage> {
                 height: 3,
               ),
               TextFormField(
-                onSaved: (val) {
+                onChanged: (val) {
                   Global.year = val;
                 },
                 decoration: InputDecoration(

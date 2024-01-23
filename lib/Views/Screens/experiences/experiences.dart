@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:resume_builder_app/Views/Utils/global.dart';
 
-class experiencespage extends StatefulWidget {
+class experiencespage extends StatelessWidget {
   const experiencespage({super.key});
 
-  @override
-  State<experiencespage> createState() => _experiencespageState();
-}
-
-class _experiencespageState extends State<experiencespage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +34,7 @@ class _experiencespageState extends State<experiencespage> {
                 height: 3,
               ),
               TextFormField(
-                onSaved: (val) {
+                onChanged: (val) {
                   Global.cname = val;
                 },
                 decoration: const InputDecoration(
@@ -50,19 +45,18 @@ class _experiencespageState extends State<experiencespage> {
                 height: 6,
               ),
               Text(
-                "School/College/Institute",
+                "Years",
                 style: Global.style3,
               ),
               const SizedBox(
                 height: 3,
               ),
               TextFormField(
-                onSaved: (val) {
-                  Global.school1 = val;
+                onChanged: (val) {
+                  Global.eyear = val;
                 },
                 decoration: const InputDecoration(
-                    hintText: "New Enterprise, San Francisco",
-                    border: OutlineInputBorder()),
+                    hintText: "Years..", border: OutlineInputBorder()),
               ),
               const SizedBox(
                 height: 6,
@@ -75,7 +69,7 @@ class _experiencespageState extends State<experiencespage> {
                 height: 3,
               ),
               TextFormField(
-                onSaved: (val) {
+                onChanged: (val) {
                   Global.role = val;
                 },
                 decoration: const InputDecoration(
@@ -96,9 +90,7 @@ class _experiencespageState extends State<experiencespage> {
                   value: "Previously",
                   groupValue: Global.Empstatus,
                   onChanged: (val) {
-                    setState(() {
-                      Global.Empstatus = val;
-                    });
+                    Global.Empstatus = val;
                   }),
               RadioListTile(
                 activeColor: Colors.blue,
@@ -106,9 +98,7 @@ class _experiencespageState extends State<experiencespage> {
                 value: "Currentiy",
                 groupValue: Global.Empstatus,
                 onChanged: (val) {
-                  setState(() {
-                    Global.Empstatus = val;
-                  });
+                  Global.Empstatus = val;
                 },
               ),
               GestureDetector(

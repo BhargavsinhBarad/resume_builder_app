@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:pdf/widgets.dart' as pw;
 
 class Global {
   static Color themecolor = Colors.red;
   static Color textcolor = Colors.white;
+  static pw.TextStyle stylepdf = pw.TextStyle(
+    fontSize: 20,
+  );
+  static pw.TextStyle stylepdf2 = pw.TextStyle(
+    fontSize: 30,
+    fontWeight: pw.FontWeight.bold,
+  );
+  static TextStyle style3 = TextStyle(
+    fontSize: 16,
+    color: Colors.red,
+  );
 
   static String name = "";
   static String email = "";
@@ -19,11 +31,9 @@ class Global {
   static bool? gujarati = false;
   static String? maritalstatus;
   static String? datetime;
+  static String? about;
   static String? nation;
-  static TextStyle style3 = TextStyle(
-    fontSize: 16,
-    color: Colors.red,
-  );
+
   static String? course;
   static String? school;
   static String? cgpa;
@@ -35,10 +45,10 @@ class Global {
   static bool? c = false;
   static bool? cp = false;
   static bool? flutter = false;
-  static bool? roles = false;
+  static String? roles;
 
   static String? cname;
-  static String? school1;
+  static String? eyear;
   static String? Empstatus;
   static String? role;
 }

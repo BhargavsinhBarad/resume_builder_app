@@ -3,14 +3,9 @@ import 'package:get/get.dart';
 
 import '../../Utils/global.dart';
 
-class projectpage extends StatefulWidget {
+class projectpage extends StatelessWidget {
   const projectpage({super.key});
 
-  @override
-  State<projectpage> createState() => _projectpageState();
-}
-
-class _projectpageState extends State<projectpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +32,7 @@ class _projectpageState extends State<projectpage> {
                 style: Global.style3,
               ),
               TextFormField(
-                onSaved: (val) {
+                onChanged: (val) {
                   Global.titl = val;
                 },
                 decoration: InputDecoration(
@@ -48,7 +43,7 @@ class _projectpageState extends State<projectpage> {
                 height: 10,
               ),
               Text(
-                "Project Title",
+                "Framework ",
                 style: Global.style3,
               ),
               Row(
@@ -56,9 +51,7 @@ class _projectpageState extends State<projectpage> {
                   Checkbox(
                       value: Global.c,
                       onChanged: (val) {
-                        setState(() {
-                          Global.c = val;
-                        });
+                        Global.c = val;
                       }),
                   Text("C Programming"),
                 ],
@@ -68,9 +61,7 @@ class _projectpageState extends State<projectpage> {
                   Checkbox(
                       value: Global.cp,
                       onChanged: (val) {
-                        setState(() {
-                          Global.cp = val;
-                        });
+                        Global.cp = val;
                       }),
                   Text("C++"),
                 ],
@@ -80,9 +71,7 @@ class _projectpageState extends State<projectpage> {
                   Checkbox(
                       value: Global.flutter,
                       onChanged: (val) {
-                        setState(() {
-                          Global.flutter = val;
-                        });
+                        Global.flutter = val;
                       }),
                   Text("Flutter"),
                 ],
@@ -95,8 +84,8 @@ class _projectpageState extends State<projectpage> {
                 style: Global.style3,
               ),
               TextFormField(
-                onSaved: (val) {
-                  Global.roles = val as bool?;
+                onChanged: (val) {
+                  Global.roles = val;
                 },
                 decoration: InputDecoration(
                     hintText: "Organize team members,code",
@@ -110,7 +99,7 @@ class _projectpageState extends State<projectpage> {
                 style: Global.style3,
               ),
               TextFormField(
-                onSaved: (val) {
+                onChanged: (val) {
                   Global.tecono = val;
                 },
                 decoration: InputDecoration(
@@ -124,7 +113,7 @@ class _projectpageState extends State<projectpage> {
                 style: Global.style3,
               ),
               TextFormField(
-                onSaved: (val) {
+                onChanged: (val) {
                   Global.des = val;
                 },
                 decoration: InputDecoration(
