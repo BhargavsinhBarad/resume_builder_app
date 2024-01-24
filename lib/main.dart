@@ -10,6 +10,7 @@ import 'package:resume_builder_app/Views/Screens/persondetail/prersonpage.dart';
 import 'package:resume_builder_app/Views/Screens/projectpage/project.dart';
 
 import 'Views/Screens/Spalsh/spalshscreen.dart';
+import 'Views/Screens/achievement/achievement.dart';
 
 void main() {
   runApp(
@@ -25,6 +26,7 @@ void main() {
         'eduction': (context) => eductionpage(),
         'projects': (context) => projectpage(),
         'experiences': (context) => experiencespage(),
+        'achievements': (context) => Achievements(),
         'pdf': (context) => pdf_page(),
       },
     ),

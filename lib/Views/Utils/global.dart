@@ -26,6 +26,12 @@ class Global {
   static TextEditingController numberController = TextEditingController();
   static TextEditingController cityController = TextEditingController();
 
+  static List AllTextFields = [];
+  static List<TextEditingController> AllController = [];
+
+  static List expTextFields = [];
+  static List<TextEditingController> expController = [];
+
   static bool? english = false;
   static bool? hindi = false;
   static bool? gujarati = false;

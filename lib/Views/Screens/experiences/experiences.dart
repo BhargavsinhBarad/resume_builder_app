@@ -2,8 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:resume_builder_app/Views/Utils/global.dart';
 
-class experiencespage extends StatelessWidget {
+class experiencespage extends StatefulWidget {
   const experiencespage({super.key});
+
+  @override
+  State<experiencespage> createState() => _experiencespageState();
+}
+
+class _experiencespageState extends State<experiencespage> {
+  void initState() {
+    super.initState();
+    Global.expController.add(TextEditingController());
+
+    Global.expTextFields.add(Row());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,111 +35,88 @@ class experiencespage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Company Name",
-                style: Global.style3,
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-              TextFormField(
-                onChanged: (val) {
-                  Global.cname = val;
-                },
-                decoration: const InputDecoration(
-                    hintText: "New Enterprise, San Francisco",
-                    border: OutlineInputBorder()),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              Text(
-                "Years",
-                style: Global.style3,
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-              TextFormField(
-                onChanged: (val) {
-                  Global.eyear = val;
-                },
-                decoration: const InputDecoration(
-                    hintText: "Years..", border: OutlineInputBorder()),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              Text(
-                "Roles(optional)",
-                style: Global.style3,
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-              TextFormField(
-                onChanged: (val) {
-                  Global.role = val;
-                },
-                decoration: const InputDecoration(
-                    hintText:
-                        "Working with team members to come up with new concepts and product analysis",
-                    border: OutlineInputBorder()),
-              ),
-              const SizedBox(
-                height: 12,
-              ),
-              Text(
-                "Employed Status",
-                style: Global.style3,
-              ),
-              RadioListTile(
-                  activeColor: Colors.blue,
-                  title: const Text("Previously Employed"),
-                  value: "Previously",
-                  groupValue: Global.Empstatus,
-                  onChanged: (val) {
-                    Global.Empstatus = val;
-                  }),
-              RadioListTile(
-                activeColor: Colors.blue,
-                title: const Text("Currentiy Employed"),
-                value: "Currentiy",
-                groupValue: Global.Empstatus,
-                onChanged: (val) {
-                  Global.Empstatus = val;
-                },
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-                child: Container(
-                  margin: EdgeInsets.all(20),
-                  height: Get.height * 0.09,
-                  width: double.infinity,
-                  child: Center(
-                    child: Text(
-                      "SAVE",
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Global.textcolor),
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Company Name",
+                  style: Global.style3,
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                ...Global.AllTextFields.map(
+                  (e) => getTextFiled(
+                    i: Global.AllTextFields.indexOf(
+                      (e),
                     ),
                   ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Global.themecolor,
+                ).toList(),
+                SizedBox(
+                  height: 30,
+                ),
+                InkWell(
+                  onTap: () {
+                    setState(
+                      () {
+                        Global.AllController.add(TextEditingController());
+                        Global.AllTextFields.add(
+                            getTextFiled(i: Global.AllTextFields.length));
+                      },
+                    );
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 120,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Global.themecolor.withOpacity(0.5),
+                    ),
+                    child: Icon(
+                      Icons.add,
+                      size: 50,
+                      color: Global.themecolor,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
+  }
+
+  Row getTextFiled({required int i}) {
+    return Row(children: [
+      Expanded(
+        flex: 10,
+        child: TextField(
+          controller: Global.AllController[i],
+          decoration: InputDecoration(
+            hintText: "Enter your Company Nmae",
+            hintStyle: TextStyle(color: Colors.grey, fontSize: 18),
+          ),
+        ),
+      ),
+      Expanded(
+        flex: 2,
+        child: IconButton(
+          onPressed: () {
+            setState(
+              () {
+                Global.expController.removeAt(i);
+                Global.expTextFields.removeAt(i);
+              },
+            );
+          },
+          icon: Icon(
+            Icons.delete,
+            size: 40,
+          ),
+        ),
+      ),
+    ]);
   }
 }

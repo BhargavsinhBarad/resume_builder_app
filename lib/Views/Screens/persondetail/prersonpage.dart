@@ -3,9 +3,14 @@ import 'package:get/get.dart';
 
 import '../../Utils/global.dart';
 
-class persondetail extends StatelessWidget {
+class persondetail extends StatefulWidget {
   const persondetail({super.key});
 
+  @override
+  State<persondetail> createState() => _persondetailState();
+}
+
+class _persondetailState extends State<persondetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +79,9 @@ class persondetail extends StatelessWidget {
                   value: "single",
                   groupValue: Global.maritalstatus,
                   onChanged: (val) {
-                    Global.maritalstatus = val;
+                    setState(() {
+                      Global.maritalstatus = val;
+                    });
                   }),
               RadioListTile(
                 activeColor: Colors.blue,
@@ -82,7 +89,9 @@ class persondetail extends StatelessWidget {
                 value: "marride",
                 groupValue: Global.maritalstatus,
                 onChanged: (val) {
-                  Global.maritalstatus = val;
+                  setState(() {
+                    Global.maritalstatus = val;
+                  });
                 },
               ),
               Text(
@@ -94,7 +103,9 @@ class persondetail extends StatelessWidget {
                   Checkbox(
                       value: Global.english,
                       onChanged: (val) {
-                        Global.english = val;
+                        setState(() {
+                          Global.english = val;
+                        });
                       }),
                   Text("English"),
                 ],
@@ -104,7 +115,9 @@ class persondetail extends StatelessWidget {
                   Checkbox(
                       value: Global.hindi,
                       onChanged: (val) {
-                        Global.hindi = val;
+                        setState(() {
+                          Global.hindi = val;
+                        });
                       }),
                   Text("Hindi"),
                 ],
@@ -114,7 +127,9 @@ class persondetail extends StatelessWidget {
                   Checkbox(
                       value: Global.gujarati,
                       onChanged: (val) {
-                        Global.gujarati = val;
+                        setState(() {
+                          Global.gujarati = val;
+                        });
                       }),
                   Text("Gujarati"),
                 ],

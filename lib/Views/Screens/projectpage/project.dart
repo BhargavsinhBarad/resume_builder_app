@@ -3,9 +3,14 @@ import 'package:get/get.dart';
 
 import '../../Utils/global.dart';
 
-class projectpage extends StatelessWidget {
+class projectpage extends StatefulWidget {
   const projectpage({super.key});
 
+  @override
+  State<projectpage> createState() => _projectpageState();
+}
+
+class _projectpageState extends State<projectpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +38,9 @@ class projectpage extends StatelessWidget {
               ),
               TextFormField(
                 onChanged: (val) {
-                  Global.titl = val;
+                  setState(() {
+                    Global.titl = val;
+                  });
                 },
                 decoration: InputDecoration(
                     hintText: "Resumne Builder App",
@@ -51,7 +58,9 @@ class projectpage extends StatelessWidget {
                   Checkbox(
                       value: Global.c,
                       onChanged: (val) {
-                        Global.c = val;
+                        setState(() {
+                          Global.c = val;
+                        });
                       }),
                   Text("C Programming"),
                 ],
@@ -61,7 +70,9 @@ class projectpage extends StatelessWidget {
                   Checkbox(
                       value: Global.cp,
                       onChanged: (val) {
-                        Global.cp = val;
+                        setState(() {
+                          Global.cp = val;
+                        });
                       }),
                   Text("C++"),
                 ],
@@ -71,7 +82,9 @@ class projectpage extends StatelessWidget {
                   Checkbox(
                       value: Global.flutter,
                       onChanged: (val) {
-                        Global.flutter = val;
+                        setState(() {
+                          Global.flutter = val;
+                        });
                       }),
                   Text("Flutter"),
                 ],

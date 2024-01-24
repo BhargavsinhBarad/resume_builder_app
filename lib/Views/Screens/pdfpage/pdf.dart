@@ -1,7 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
@@ -19,7 +17,7 @@ class _pdf_pageState extends State<pdf_page> {
   final pdf = pw.Document();
 
   generatepdf() async {
-    final ByteData bytes = await rootBundle.load('lib/Assets/Image/02.jpg');
+    final ByteData bytes = await rootBundle.load('lib/Assets/Image/01.jpeg');
     final Uint8List byteList = bytes.buffer.asUint8List();
     pdf.addPage(
       pw.Page(

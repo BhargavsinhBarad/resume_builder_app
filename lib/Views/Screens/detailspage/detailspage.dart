@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -43,6 +45,8 @@ class detailspage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Global.themecolor,
         onPressed: () {
+          log("${Global.expController[2].text}");
+          log("=================================================");
           Navigator.of(context).pushNamed("pdf");
         },
         child: Icon(
