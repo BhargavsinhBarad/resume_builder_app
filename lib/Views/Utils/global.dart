@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 class Global {
@@ -8,7 +11,7 @@ class Global {
     fontSize: 20,
   );
   static pw.TextStyle stylepdf2 = pw.TextStyle(
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: pw.FontWeight.bold,
   );
   static TextStyle style3 = TextStyle(
@@ -25,6 +28,8 @@ class Global {
   static TextEditingController emailController = TextEditingController();
   static TextEditingController numberController = TextEditingController();
   static TextEditingController cityController = TextEditingController();
+
+  static File? file;
 
   static List AllTextFields = [];
   static List<TextEditingController> AllController = [];

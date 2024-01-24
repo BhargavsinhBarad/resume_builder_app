@@ -28,7 +28,7 @@ class _skillpageState extends State<skillpage> {
           style: TextStyle(
               color: Global.textcolor,
               fontWeight: FontWeight.bold,
-              fontSize: 25),
+              fontSize: 22),
         ),
         foregroundColor: Global.textcolor,
       ),

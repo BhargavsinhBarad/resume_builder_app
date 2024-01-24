@@ -56,6 +56,8 @@ class _projectpageState extends State<projectpage> {
               Row(
                 children: [
                   Checkbox(
+                      checkColor: Global.textcolor,
+                      activeColor: Global.themecolor,
                       value: Global.c,
                       onChanged: (val) {
                         setState(() {
@@ -68,6 +70,8 @@ class _projectpageState extends State<projectpage> {
               Row(
                 children: [
                   Checkbox(
+                      checkColor: Global.textcolor,
+                      activeColor: Global.themecolor,
                       value: Global.cp,
                       onChanged: (val) {
                         setState(() {
@@ -80,6 +84,8 @@ class _projectpageState extends State<projectpage> {
               Row(
                 children: [
                   Checkbox(
+                      checkColor: Global.textcolor,
+                      activeColor: Global.themecolor,
                       value: Global.flutter,
                       onChanged: (val) {
                         setState(() {
@@ -92,6 +98,8 @@ class _projectpageState extends State<projectpage> {
               Row(
                 children: [
                   Checkbox(
+                      checkColor: Global.textcolor,
+                      activeColor: Global.themecolor,
                       value: Global.android,
                       onChanged: (val) {
                         setState(() {
@@ -104,6 +112,8 @@ class _projectpageState extends State<projectpage> {
               Row(
                 children: [
                   Checkbox(
+                      checkColor: Global.textcolor,
+                      activeColor: Global.themecolor,
                       value: Global.ios,
                       onChanged: (val) {
                         setState(() {
@@ -116,6 +126,8 @@ class _projectpageState extends State<projectpage> {
               Row(
                 children: [
                   Checkbox(
+                      checkColor: Global.textcolor,
+                      activeColor: Global.themecolor,
                       value: Global.web,
                       onChanged: (val) {
                         setState(() {
@@ -128,6 +140,8 @@ class _projectpageState extends State<projectpage> {
               Row(
                 children: [
                   Checkbox(
+                      checkColor: Global.textcolor,
+                      activeColor: Global.themecolor,
                       value: Global.front,
                       onChanged: (val) {
                         setState(() {
@@ -140,6 +154,8 @@ class _projectpageState extends State<projectpage> {
               Row(
                 children: [
                   Checkbox(
+                      checkColor: Global.textcolor,
+                      activeColor: Global.themecolor,
                       value: Global.back,
                       onChanged: (val) {
                         setState(() {

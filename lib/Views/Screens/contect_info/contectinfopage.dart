@@ -1,10 +1,20 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../Utils/global.dart';
 
-class contectpage extends StatelessWidget {
-  const contectpage({super.key});
+class contectpage extends StatefulWidget {
+  contectpage({super.key});
+
+  @override
+  State<contectpage> createState() => _contectpageState();
+}
+
+class _contectpageState extends State<contectpage> {
+  final ImagePicker picker = ImagePicker();
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +37,27 @@ class contectpage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(
+                height: Get.height * 0.02,
+              ),
+              GestureDetector(
+                onTap: () async {
+                  final XFile? photo =
+                      await picker.pickImage(source: ImageSource.camera);
+                  setState(() {
+                    Global.file = File(photo!.path);
+                  });
+                },
+                child: (Global.file == null)
+                    ? CircleAvatar(
+                        radius: 80,
+                        backgroundColor: Global.themecolor.withOpacity(0.7),
+                      )
+                    : CircleAvatar(
+                        radius: 80,
+                        foregroundImage: FileImage(File(Global.file!.path)),
+                      ),
+              ),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),

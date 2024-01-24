@@ -50,10 +50,6 @@ class _detailspageState extends State<detailspage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Global.themecolor,
         onPressed: () {
-          log("${Global.skillController[1].text}");
-          log("${Global.skillController[2].text}");
-          log("${Global.skillController[3].text}");
-          log("=================================================");
           Navigator.of(context).pushNamed("pdf");
         },
         child: Icon(
@@ -61,53 +57,55 @@ class _detailspageState extends State<detailspage> {
           color: Global.textcolor,
         ),
       ),
-      body: Column(
-        children: [
-          ...myoptions
-              .map(
-                (e) => Column(
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          height: MediaQuery.of(context).size.height * 0.05,
-                          width: MediaQuery.of(context).size.width * 0.1,
-                          margin: const EdgeInsets.all(5),
-                          child: Image.asset(
-                            "${e['icon']}",
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ...myoptions
+                .map(
+                  (e) => Column(
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            height: MediaQuery.of(context).size.height * 0.05,
+                            width: MediaQuery.of(context).size.width * 0.1,
+                            margin: const EdgeInsets.all(5),
+                            child: Image.asset(
+                              "${e['icon']}",
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.07,
-                        ),
-                        Text(
-                          e['name'],
-                          style: const TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w400,
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.07,
                           ),
-                        ),
-                        const Spacer(),
-                        IconButton(
-                          onPressed: () {
-                            Navigator.of(context).pushNamed(
-                              e['route_name'],
-                            );
-                          },
-                          icon: const Icon(
-                            CupertinoIcons.forward,
+                          Text(
+                            e['name'],
+                            style: const TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const Divider(
-                      thickness: 3,
-                    )
-                  ],
-                ),
-              )
-              .toList(),
-        ],
+                          const Spacer(),
+                          IconButton(
+                            onPressed: () {
+                              Navigator.of(context).pushNamed(
+                                e['route_name'],
+                              );
+                            },
+                            icon: const Icon(
+                              CupertinoIcons.forward,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Divider(
+                        thickness: 3,
+                      )
+                    ],
+                  ),
+                )
+                .toList(),
+          ],
+        ),
       ),
     );
   }

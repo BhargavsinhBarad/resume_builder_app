@@ -74,7 +74,7 @@ class _persondetailState extends State<persondetail> {
                 style: Global.style3,
               ),
               RadioListTile(
-                  activeColor: Colors.blue,
+                  activeColor: Global.themecolor,
                   title: Text("Single"),
                   value: "single",
                   groupValue: Global.maritalstatus,
@@ -84,7 +84,7 @@ class _persondetailState extends State<persondetail> {
                     });
                   }),
               RadioListTile(
-                activeColor: Colors.blue,
+                activeColor: Global.themecolor,
                 title: Text("Married"),
                 value: "marride",
                 groupValue: Global.maritalstatus,
@@ -101,6 +101,8 @@ class _persondetailState extends State<persondetail> {
               Row(
                 children: [
                   Checkbox(
+                      checkColor: Global.textcolor,
+                      activeColor: Global.themecolor,
                       value: Global.english,
                       onChanged: (val) {
                         setState(() {
@@ -113,6 +115,8 @@ class _persondetailState extends State<persondetail> {
               Row(
                 children: [
                   Checkbox(
+                      checkColor: Global.textcolor,
+                      activeColor: Global.themecolor,
                       value: Global.hindi,
                       onChanged: (val) {
                         setState(() {
@@ -125,6 +129,8 @@ class _persondetailState extends State<persondetail> {
               Row(
                 children: [
                   Checkbox(
+                      checkColor: Global.textcolor,
+                      activeColor: Global.themecolor,
                       value: Global.gujarati,
                       onChanged: (val) {
                         setState(() {
