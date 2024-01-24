@@ -25,6 +25,11 @@ List myoptions = [
     "route_name": "achievements",
   },
   {
+    'icon': "lib/Assets/Icons/thinking.png",
+    'name': "Technical Skills",
+    'route_name': "skills"
+  },
+  {
     'icon': "lib/Assets/Icons/project.png",
     'name': "Projects",
     'route_name': "projects"

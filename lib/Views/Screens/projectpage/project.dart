@@ -89,6 +89,66 @@ class _projectpageState extends State<projectpage> {
                   Text("Flutter"),
                 ],
               ),
+              Row(
+                children: [
+                  Checkbox(
+                      value: Global.android,
+                      onChanged: (val) {
+                        setState(() {
+                          Global.android = val;
+                        });
+                      }),
+                  Text("Android"),
+                ],
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                      value: Global.ios,
+                      onChanged: (val) {
+                        setState(() {
+                          Global.ios = val;
+                        });
+                      }),
+                  Text("Ios"),
+                ],
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                      value: Global.web,
+                      onChanged: (val) {
+                        setState(() {
+                          Global.web = val;
+                        });
+                      }),
+                  Text("Web"),
+                ],
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                      value: Global.front,
+                      onChanged: (val) {
+                        setState(() {
+                          Global.front = val;
+                        });
+                      }),
+                  const Text("Frontend"),
+                ],
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                      value: Global.back,
+                      onChanged: (val) {
+                        setState(() {
+                          Global.back = val;
+                        });
+                      }),
+                  const Text("Backend"),
+                ],
+              ),
               SizedBox(
                 height: 10,
               ),

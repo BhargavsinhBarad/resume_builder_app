@@ -32,6 +32,9 @@ class Global {
   static List expTextFields = [];
   static List<TextEditingController> expController = [];
 
+  static List skillTextFields = [];
+  static List<TextEditingController> skillController = [];
+
   static bool? english = false;
   static bool? hindi = false;
   static bool? gujarati = false;
@@ -51,6 +54,11 @@ class Global {
   static bool? c = false;
   static bool? cp = false;
   static bool? flutter = false;
+  static bool? android = false;
+  static bool? ios = false;
+  static bool? web = false;
+  static bool? front = false;
+  static bool? back = false;
   static String? roles;
 
   static String? cname;

@@ -8,6 +8,7 @@ import 'package:resume_builder_app/Views/Screens/experiences/experiences.dart';
 import 'package:resume_builder_app/Views/Screens/pdfpage/pdf.dart';
 import 'package:resume_builder_app/Views/Screens/persondetail/prersonpage.dart';
 import 'package:resume_builder_app/Views/Screens/projectpage/project.dart';
+import 'package:resume_builder_app/Views/Screens/skills/skill.dart';
 
 import 'Views/Screens/Spalsh/spalshscreen.dart';
 import 'Views/Screens/achievement/achievement.dart';
@@ -27,6 +28,7 @@ void main() {
         'projects': (context) => projectpage(),
         'experiences': (context) => experiencespage(),
         'achievements': (context) => Achievements(),
+        'skills': (context) => skillpage(),
         'pdf': (context) => pdf_page(),
       },
     ),

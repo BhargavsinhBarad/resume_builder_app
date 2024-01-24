@@ -7,9 +7,14 @@ import 'package:get/get.dart';
 import '../../Utils/global.dart';
 import '../../Utils/list.dart';
 
-class detailspage extends StatelessWidget {
+class detailspage extends StatefulWidget {
   const detailspage({super.key});
 
+  @override
+  State<detailspage> createState() => _detailspageState();
+}
+
+class _detailspageState extends State<detailspage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +32,7 @@ class detailspage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 25),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Text(
@@ -45,7 +50,9 @@ class detailspage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Global.themecolor,
         onPressed: () {
-          log("${Global.expController[2].text}");
+          log("${Global.skillController[1].text}");
+          log("${Global.skillController[2].text}");
+          log("${Global.skillController[3].text}");
           log("=================================================");
           Navigator.of(context).pushNamed("pdf");
         },
@@ -57,37 +64,48 @@ class detailspage extends StatelessWidget {
       body: Column(
         children: [
           ...myoptions
-              .map((e) => Column(
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            height: MediaQuery.of(context).size.height * 0.05,
-                            width: MediaQuery.of(context).size.width * 0.1,
-                            margin: EdgeInsets.all(5),
-                            child: Image.asset("${e['icon']}"),
+              .map(
+                (e) => Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.05,
+                          width: MediaQuery.of(context).size.width * 0.1,
+                          margin: const EdgeInsets.all(5),
+                          child: Image.asset(
+                            "${e['icon']}",
                           ),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.07),
-                          Text(
-                            e['name'],
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.w400),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.07,
+                        ),
+                        Text(
+                          e['name'],
+                          style: const TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.w400,
                           ),
-                          Spacer(),
-                          IconButton(
-                            onPressed: () {
-                              Navigator.of(context).pushNamed(e['route_name']);
-                            },
-                            icon: Icon(CupertinoIcons.forward),
+                        ),
+                        const Spacer(),
+                        IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pushNamed(
+                              e['route_name'],
+                            );
+                          },
+                          icon: const Icon(
+                            CupertinoIcons.forward,
                           ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 3,
-                      )
-                    ],
-                  ))
+                        ),
+                      ],
+                    ),
+                    const Divider(
+                      thickness: 3,
+                    )
+                  ],
+                ),
+              )
               .toList(),
         ],
       ),

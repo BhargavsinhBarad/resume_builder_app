@@ -13,7 +13,6 @@ class _experiencespageState extends State<experiencespage> {
   void initState() {
     super.initState();
     Global.expController.add(TextEditingController());
-
     Global.expTextFields.add(Row());
   }
 
@@ -46,13 +45,15 @@ class _experiencespageState extends State<experiencespage> {
                 const SizedBox(
                   height: 3,
                 ),
-                ...Global.AllTextFields.map(
-                  (e) => getTextFiled(
-                    i: Global.AllTextFields.indexOf(
-                      (e),
-                    ),
-                  ),
-                ).toList(),
+                ...Global.expTextFields
+                    .map(
+                      (e) => getTextFiled(
+                        i: Global.expTextFields.indexOf(
+                          (e),
+                        ),
+                      ),
+                    )
+                    .toList(),
                 SizedBox(
                   height: 30,
                 ),
@@ -60,9 +61,9 @@ class _experiencespageState extends State<experiencespage> {
                   onTap: () {
                     setState(
                       () {
-                        Global.AllController.add(TextEditingController());
-                        Global.AllTextFields.add(
-                            getTextFiled(i: Global.AllTextFields.length));
+                        Global.expController.add(TextEditingController());
+                        Global.expTextFields
+                            .add(getTextFiled(i: Global.expTextFields.length));
                       },
                     );
                   },
@@ -93,7 +94,7 @@ class _experiencespageState extends State<experiencespage> {
       Expanded(
         flex: 10,
         child: TextField(
-          controller: Global.AllController[i],
+          controller: Global.expController[i],
           decoration: InputDecoration(
             hintText: "Enter your Company Nmae",
             hintStyle: TextStyle(color: Colors.grey, fontSize: 18),
