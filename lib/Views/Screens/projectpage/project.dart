@@ -25,6 +25,15 @@ class _projectpageState extends State<projectpage> {
               fontSize: 25),
         ),
         foregroundColor: Global.textcolor,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(
+            Icons.chevron_left,
+            size: 35,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -214,7 +223,7 @@ class _projectpageState extends State<projectpage> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).pop();
+                  Get.back();
                 },
                 child: Container(
                   margin: EdgeInsets.all(20),

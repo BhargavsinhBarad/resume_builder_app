@@ -24,13 +24,22 @@ class _contectpageState extends State<contectpage> {
         backgroundColor: Global.themecolor,
         foregroundColor: Global.textcolor,
         title: Text(
-          "Resume Builder",
+          "Contact Info",
           style: TextStyle(
-              color: Global.textcolor,
-              fontWeight: FontWeight.bold,
-              fontSize: 25),
+            color: Global.textcolor,
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
         ),
-        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(
+            Icons.chevron_left,
+            size: 35,
+          ),
+        ),
       ),
       body: Form(
         key: Global.formkey,
@@ -174,7 +183,7 @@ class _contectpageState extends State<contectpage> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).pop();
+                  Get.back();
                 },
                 child: Container(
                   margin: EdgeInsets.all(20),

@@ -30,6 +30,15 @@ class _experiencespageState extends State<experiencespage> {
               fontWeight: FontWeight.bold,
               fontSize: 25),
         ),
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(
+            Icons.chevron_left,
+            size: 35,
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),

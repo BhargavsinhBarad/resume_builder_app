@@ -28,6 +28,8 @@ class Global {
   static TextEditingController emailController = TextEditingController();
   static TextEditingController numberController = TextEditingController();
   static TextEditingController cityController = TextEditingController();
+  static PageController pageController = PageController(initialPage: 0);
+  static int currentPageIndex = 0;
 
   static File? file;
 

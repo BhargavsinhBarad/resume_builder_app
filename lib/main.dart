@@ -5,32 +5,76 @@ import 'package:resume_builder_app/Views/Screens/Homepage/homescreen.dart';
 import 'package:resume_builder_app/Views/Screens/contect_info/contectinfopage.dart';
 import 'package:resume_builder_app/Views/Screens/detailspage/detailspage.dart';
 import 'package:resume_builder_app/Views/Screens/experiences/experiences.dart';
+import 'package:resume_builder_app/Views/Screens/intropage/intropage.dart';
 import 'package:resume_builder_app/Views/Screens/pdfpage/pdf.dart';
 import 'package:resume_builder_app/Views/Screens/persondetail/prersonpage.dart';
 import 'package:resume_builder_app/Views/Screens/projectpage/project.dart';
 import 'package:resume_builder_app/Views/Screens/skills/skill.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Views/Screens/Spalsh/spalshscreen.dart';
 import 'Views/Screens/achievement/achievement.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  bool isvisited = preferences.getBool("isIntroVisited") ?? false;
+
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
-      routes: {
-        '/': (context) => Splash(),
-        'home': (context) => Home_Page(),
-        'detail': (context) => detailspage(),
-        'contact_info': (context) => contectpage(),
-        'personal_details': (context) => persondetail(),
-        'eduction': (context) => eductionpage(),
-        'projects': (context) => projectpage(),
-        'experiences': (context) => experiencespage(),
-        'achievements': (context) => Achievements(),
-        'skills': (context) => skillpage(),
-        'pdf': (context) => pdf_page(),
-      },
+      initialRoute: (isvisited) ? '/splash' : '/',
+      getPages: [
+        GetPage(
+          name: '/',
+          page: () => intropage(),
+        ),
+        GetPage(
+          name: '/splash',
+          page: () => Splash(),
+        ),
+        GetPage(
+          name: '/home',
+          page: () => Home_Page(),
+        ),
+        GetPage(
+          name: '/detail',
+          page: () => detailspage(),
+        ),
+        GetPage(
+          name: '/contact_info',
+          page: () => contectpage(),
+        ),
+        GetPage(
+          name: '/personal_details',
+          page: () => persondetail(),
+        ),
+        GetPage(
+          name: '/eduction',
+          page: () => eductionpage(),
+        ),
+        GetPage(
+          name: '/projects',
+          page: () => projectpage(),
+        ),
+        GetPage(
+          name: '/experiences',
+          page: () => experiencespage(),
+        ),
+        GetPage(
+          name: '/achievements',
+          page: () => Achievements(),
+        ),
+        GetPage(
+          name: '/skills',
+          page: () => skillpage(),
+        ),
+        GetPage(
+          name: '/pdf',
+          page: () => pdf_page(),
+        ),
+      ],
     ),
   );
 }

@@ -46,11 +46,24 @@ class _detailspageState extends State<detailspage> {
             ],
           ),
         ),
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(
+            Icons.chevron_left,
+            size: 35,
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Global.themecolor,
         onPressed: () {
-          Navigator.of(context).pushNamed("pdf");
+          (Global.file == null)
+              ? Get.snackbar("Resume Builder", "Enter Photo First",
+                  backgroundColor: Colors.black.withOpacity(0.5),
+                  colorText: Colors.white)
+              : Get.toNamed("/pdf");
         },
         child: Icon(
           Icons.picture_as_pdf,
@@ -87,9 +100,7 @@ class _detailspageState extends State<detailspage> {
                           const Spacer(),
                           IconButton(
                             onPressed: () {
-                              Navigator.of(context).pushNamed(
-                                e['route_name'],
-                              );
+                              Get.toNamed("${e['route_name']}");
                             },
                             icon: const Icon(
                               CupertinoIcons.forward,

@@ -38,7 +38,9 @@ dependencies:
   get:
   pdf:
   printing:
-  image_picker: ^1.0.7
+  image_picker:
+  shared_preferences:
+  google_fonts:
 
 dev_dependencies:
   flutter_test:

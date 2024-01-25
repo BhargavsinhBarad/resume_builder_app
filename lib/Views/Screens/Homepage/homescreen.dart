@@ -41,7 +41,7 @@ class Home_Page extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Global.themecolor,
         onPressed: () {
-          Navigator.of(context).pushNamed("detail");
+          Get.toNamed("/detail");
         },
         child: Icon(
           Icons.add,

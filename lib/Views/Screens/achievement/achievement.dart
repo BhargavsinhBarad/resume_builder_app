@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../Utils/global.dart';
 
@@ -32,6 +33,15 @@ class _AchievementsState extends State<Achievements> {
             color: Global.textcolor,
             fontWeight: FontWeight.bold,
             fontSize: 25,
+          ),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(
+            Icons.chevron_left,
+            size: 35,
           ),
         ),
         foregroundColor: Global.textcolor,

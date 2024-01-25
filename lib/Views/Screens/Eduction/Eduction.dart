@@ -14,11 +14,20 @@ class eductionpage extends StatelessWidget {
         backgroundColor: Global.themecolor,
         foregroundColor: Global.textcolor,
         title: Text(
-          "Resume Builder",
+          "Eduction",
           style: TextStyle(
               color: Global.textcolor,
               fontWeight: FontWeight.bold,
               fontSize: 25),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(
+            Icons.chevron_left,
+            size: 35,
+          ),
         ),
       ),
       body: Padding(
@@ -99,7 +108,7 @@ class eductionpage extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).pop();
+                  Get.back();
                 },
                 child: Container(
                   margin: EdgeInsets.all(20),

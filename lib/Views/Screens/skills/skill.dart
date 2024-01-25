@@ -31,6 +31,15 @@ class _skillpageState extends State<skillpage> {
               fontSize: 22),
         ),
         foregroundColor: Global.textcolor,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(
+            Icons.chevron_left,
+            size: 35,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Center(

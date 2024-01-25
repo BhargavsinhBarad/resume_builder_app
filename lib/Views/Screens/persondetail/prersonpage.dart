@@ -19,11 +19,20 @@ class _persondetailState extends State<persondetail> {
         backgroundColor: Global.themecolor,
         foregroundColor: Global.textcolor,
         title: Text(
-          "Resume Builder",
+          "Person Detail",
           style: TextStyle(
               color: Global.textcolor,
               fontWeight: FontWeight.bold,
               fontSize: 25),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(
+            Icons.chevron_left,
+            size: 35,
+          ),
         ),
       ),
       body: Padding(
@@ -153,7 +162,7 @@ class _persondetailState extends State<persondetail> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).pop();
+                  Get.back();
                 },
                 child: Container(
                   margin: EdgeInsets.all(20),
